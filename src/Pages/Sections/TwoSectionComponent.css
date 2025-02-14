@@ -1,0 +1,63 @@
+/* Container styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 16px;
+}
+
+/* Section layout */
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+/* Content box styling */
+.content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    border-radius: 24px;
+    padding: 12px
+}
+
+@media (min-width: 768px) {
+    .section {
+        flex-direction: row;
+    }
+
+    .content-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1;
+        border-radius: 24px;
+    }
+}
+
+
+/* Image styling */
+.image {
+    width: 100%;
+
+    border-radius: 8px;
+}
+
+/* Header styling */
+.header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* Text styling */
+.text {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0.5rem;
+}

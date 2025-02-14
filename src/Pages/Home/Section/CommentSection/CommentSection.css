@@ -1,0 +1,108 @@
+.comment-section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+
+}
+
+.comments-container {
+
+    align-items: center;
+    gap: 1rem;
+    padding: 12px;
+    /* width: 100%; */
+    max-width: 1200px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 16px;
+    padding-bottom: 48px
+}
+
+.comments-container-arrows {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 1200px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 48px;
+}
+
+.comments-wrapper {
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+.comment-card {
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: calc(43.33% - 1rem);
+    flex-shrink: 0;
+
+}
+
+.comment-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.comment-card .comment-date {
+    font-size: 16px;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.comment-card .comment-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--secondary-color);
+}
+
+.arrow {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+    /* Smooth hover transition */
+}
+
+.arrow:disabled {
+    opacity: 0.1;
+    cursor: not-allowed;
+}
+
+.arrow:hover:not(:disabled) {
+    background: var(--accent-color);
+    /* Background color change on hover */
+    color: var(--background-color);
+    /* Text/icon color change */
+    border: none;
+}
+
+.comment-section-div {
+    padding: 48px;
+
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .comment-card {
+        min-width: 100%;
+    }
+
+    .comments-wrapper {
+        gap: 0.5rem;
+    }
+}

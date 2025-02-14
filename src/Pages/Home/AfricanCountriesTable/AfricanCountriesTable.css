@@ -1,0 +1,60 @@
+/* Container styling */
+.table-container {
+    width: 90%;
+    padding: 20px;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Table responsiveness */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+
+}
+
+th {
+    padding: 12px;
+    border: 0.3px solid var(--secondary-color);
+    text-align: left;
+
+}
+
+
+td {
+    padding: 12px;
+    border: 0.3px solid var(--secondary-color);
+    text-align: left;
+
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+/* Mobile view adjustments */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
