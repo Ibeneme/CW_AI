@@ -18,14 +18,9 @@ const CommentSection = () => {
     );
   };
 
-  // Dynamically fetch the CSS variable value for primary color
   const primaryColor = getComputedStyle(document.documentElement)
     .getPropertyValue("--primary-color")
     .trim();
-
-//   const backgroundColor = getComputedStyle(document.documentElement)
-//     .getPropertyValue("--background-color")
-//     .trim();
 
   return (
     <div className="comment-section">
@@ -60,14 +55,15 @@ const CommentSection = () => {
 
             {/* Comments */}
             <div className="comments-wrapper">
-              {CommentData.slice(currentIndex, currentIndex + 3) // Show only 3 comments at a time
-                .map((comment, index) => (
+              {CommentData.slice(currentIndex, currentIndex + 3).map(
+                (comment, index) => (
                   <div className="comment-card" key={index}>
                     <h3>{comment.name}</h3>
                     <p className="comment-date">{comment.date}</p>
                     <p className="comment-text">{comment.text}</p>
                   </div>
-                ))}
+                )
+              )}
             </div>
 
             {/* Right Arrow */}
@@ -86,6 +82,18 @@ const CommentSection = () => {
             </button>
           </div>
         </div>
+
+        <h4
+          style={{
+            textAlign: "center",
+            fontSize: 16,
+            color: `var(--accent-color)`,
+            marginBottom: 12,
+            textDecorationLine:'underline'
+          }}
+        >
+          Make a Comment - Coming soon
+        </h4>
       </section>
     </div>
   );
