@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 //import { FaComments } from "react-icons/fa";
 import image from "../../../assets/askme.png";
+import image2 from "../../../assets/ThirdSection/askme2.png";
 
 const FloatingChat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +39,7 @@ const FloatingChat: React.FC = () => {
         }}
         onClick={() => setIsOpen(true)}
       >
-        <img src={image} style={{ width: 120, height: 120 }} alt="image" />
+        <img src={image2} style={{ width: 120, height: 120 }} alt="image" />
       </div>
 
       {/* Chat Modal */}
