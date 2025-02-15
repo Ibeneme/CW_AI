@@ -1,6 +1,7 @@
 import "./Hero.css";
 import Illustration from "../../../assets/Hero/heroRightGreen.png";
 import VerifiedIcon from "../../../Components/Icons/Verified";
+
 const Hero = () => {
   return (
     <section className="hero">
@@ -39,7 +40,7 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      <img src={Illustration} alt="Illustration" className="hero-image" />
+      <img src={Illustration} alt="Illustration" className="hero-images" />
     </section>
   );
 };

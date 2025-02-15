@@ -58,6 +58,10 @@
     gap: 0.5rem;
 }
 
+.hero-images{
+
+}
+
 .email-input {
     padding: 0.75rem;
     font-size: 1rem;
@@ -111,9 +115,9 @@
     text-decoration: underline;
 }
 
-.hero-image {
+.hero-images {
     position: absolute;
-    right: -650px;
+    right: -999px;
     max-width: 1200px;
     z-index: 2;
     bottom: 320px;
