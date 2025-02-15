@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 //import { FaComments } from "react-icons/fa";
 import image from "../../../assets/askme.png";
 import image2 from "../../../assets/ThirdSection/askme2.png";
-
+import image3 from "../../../assets/ThirdSection/askmeblack.png";
 const FloatingChat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isTyping, setIsTyping] = useState(true);
@@ -84,7 +84,16 @@ const FloatingChat: React.FC = () => {
                 alignItems: "center",
               }}
             >
-              <img src={image} style={{ width: 48, height: 48 }} alt="image" />
+              <img
+                src={image3}
+                style={{
+                  width: 48,
+                  height: 48,
+                  marginBottom: -12,
+                  marginRight: -9,
+                }}
+                alt="image"
+              />
               <span> Chatbot</span>
             </div>
             <span

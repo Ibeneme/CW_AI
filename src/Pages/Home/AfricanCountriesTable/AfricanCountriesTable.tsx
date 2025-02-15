@@ -11,8 +11,6 @@ const AfricanCountriesTable: React.FC = () => {
 
   return (
     <div className="table-container">
-     
-
       {/* <h1>Our African Mother Tongue Enhancer</h1> */}
       <div className="table-responsive">
         <table>
@@ -26,6 +24,7 @@ const AfricanCountriesTable: React.FC = () => {
               <th>Number of Languages (±)</th>
               <th>African Currency</th>
               <th>Currency Symbol</th>
+              <th>Traditional Clothing</th>
               <th>View Details</th>
             </tr>
           </thead>
@@ -40,6 +39,7 @@ const AfricanCountriesTable: React.FC = () => {
                 <td>{country.languagesCount}</td>
                 <td>{country.currency}</td>
                 <td>{country.currencySymbol}</td>
+                <td>{country.traditionalClothing}</td>
                 <td>
                   <button
                     style={{

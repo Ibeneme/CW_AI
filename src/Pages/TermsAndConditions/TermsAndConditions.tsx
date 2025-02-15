@@ -17,6 +17,7 @@ const TermsAndConditions: React.FC = () => {
           fontWeight: "bold",
           textAlign: "center",
           marginBottom: "20px",
+          color: `var(--accent-color)`,
         }}
       >
         Chat WaZoBia AI Terms and Conditions
@@ -157,6 +158,18 @@ const TermsAndConditions: React.FC = () => {
         of your information as outlined in the Privacy Policy. Please review the
         Privacy Policy [insert link] for more details.
       </p>
+
+      {/* <h4
+          style={{
+            textAlign: "center",
+            fontSize: 16,
+            color: `var(--accent-color)`,
+            marginBottom: 12,
+            textDecorationLine:'underline'
+          }}
+        >
+          Make a Comment - Coming soon
+        </h4> */}
     </div>
   );
 };
