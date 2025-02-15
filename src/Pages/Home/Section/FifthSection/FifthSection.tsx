@@ -3,6 +3,7 @@ import "./FifthSection.css";
 import logo from "../../../../assets/FifthSection/logo.png"; // Assuming the logo is placed in this path
 //import image from "../../../../assets/Hero/Loadingdetails.png";
 import AfricanCountriesTable from "../../AfricanCountriesTable/AfricanCountriesTable";
+import ChatWaZoBiaAI from "../../../Sections/ChatWaZoBiaAI";
 const FifthSection: React.FC = () => {
   return (
     <section className="fifth-section">
@@ -33,7 +34,18 @@ const FifthSection: React.FC = () => {
           </p>
         </div>
       </div>
-
+      <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center", // Align horizontally in the center
+          alignItems: "center", // Align vertically in the center
+          // Ensure full height for vertical centering
+        }}
+      >
+        <ChatWaZoBiaAI />
+      </div>
+      <br /> <br /> <br />
       <div className="content-container">
         <AfricanCountriesTable />
         {/* <img src={image} alt="image" className="image-style" /> */}

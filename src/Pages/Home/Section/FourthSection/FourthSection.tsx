@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import PlayIcon from "../../../../Components/Icons/PlayIcon";
 
 const FourthSection = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div
       // style={{ alignSelf: "center", width: "100%", display: "flex" }}
@@ -30,14 +30,33 @@ const FourthSection = () => {
               fun with cultural appreciation.
             </p>
 
-            <button className="join-btn" style={{ maxWidth: 370 }} onClick={() => navigate("/ayo")}>
+            <button
+              className="join-btn"
+              style={{ maxWidth: 370 }}
+              onClick={() => navigate("/ayo")}
+            >
               <PlayIcon />
-      Play Ayo Game - Demo
-    </button>
-    <button className="join-btn" style={{ maxWidth: 370 }} onClick={() => navigate("/puzzle")}>
+              Play Ayo Game - Demo
+            </button>
+            <button
+              className="join-btn"
+              style={{ maxWidth: 370 }}
+              onClick={() => navigate("/puzzle")}
+            >
               <PlayIcon />
-      Play Puzzle Game - Demo
-    </button>
+              Play Puzzle Game - Demo
+            </button>
+            <h4
+              style={{
+                textAlign: "left",
+                fontSize: 16,
+                color: `var(--accent-color)`,
+                marginBottom: 12,
+                textDecorationLine: "underline",
+              }}
+            >
+              More Games Coming Soon
+            </h4>
           </div>
 
           {/* Right Side: AI Image */}

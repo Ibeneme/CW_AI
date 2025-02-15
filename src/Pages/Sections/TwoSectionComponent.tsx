@@ -14,7 +14,7 @@ const sectionData = [
     bgColor: "#ffffff16",
   },
   {
-    image: b,
+    image: d,
     header: "Crystal-Clear Video Calls",
     text: `Connect seamlessly with high-definition video calls. Enjoy smooth, secure, and lag-free conversations with friends, family, and colleagues—anytime, anywhere.`,
     //bgColor: "#D0FFE3", // Light Mint
@@ -28,7 +28,7 @@ const sectionData = [
     bgColor: "#ffffff16",
   },
   {
-    image: d,
+    image: b,
     header: "High-Quality Voice Calls",
     text: `Experience crystal-clear voice calls with advanced noise cancellation. Talk effortlessly with friends and colleagues, no matter the distance.`,
     //bgColor: "#92FFBF", // Light Green

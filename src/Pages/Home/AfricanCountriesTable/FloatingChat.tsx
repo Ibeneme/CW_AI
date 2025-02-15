@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaComments } from "react-icons/fa";
+//import { FaComments } from "react-icons/fa";
+import image from "../../../assets/askme.png";
 
 const FloatingChat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,24 +27,18 @@ const FloatingChat: React.FC = () => {
 
   return (
     <div style={{ position: "relative", zIndex: 999999999999999 }}>
-      {/* Floating Chat Icon */}
       <div
         style={{
           position: "fixed",
           bottom: "20px",
           right: "20px",
-          backgroundColor: `var(--accent-color)`,
-          color: "white",
-          padding: "12px 16px",
-          borderRadius: "50%",
-          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
-          fontSize: "20px",
           cursor: "pointer",
           zIndex: 999999999999999,
+          animation: "bounce 1s infinite", // Bouncing animation
         }}
         onClick={() => setIsOpen(true)}
       >
-        <FaComments size={24} color={`var(--background-color)`} />
+        <img src={image} style={{ width: 120, height: 120 }} alt="image" />
       </div>
 
       {/* Chat Modal */}
@@ -80,7 +75,17 @@ const FloatingChat: React.FC = () => {
               fontWeight: "bold",
             }}
           >
-            Chatbot
+            <div
+              style={{
+                display: "flex",
+                gap: 4,
+                justifyItems: "center",
+                alignItems: "center",
+              }}
+            >
+              <img src={image} style={{ width: 48, height: 48 }} alt="image" />
+              <span> Chatbot</span>
+            </div>
             <span
               style={{
                 cursor: "pointer",
@@ -105,50 +110,61 @@ const FloatingChat: React.FC = () => {
             }}
           >
             <p>
-              👋 Hi! Welcome to <strong>ChatWazobia AI</strong>.
+              👋 Hi! Welcome to <strong>Chat Wazobia AI</strong>.
             </p>
 
-            {/* Spiral Typing Effect */}
-            {isTyping ? (
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  position: "relative",
-                  width: "50px",
-                  height: "50px",
-                }}
-              >
-                <span
-                  style={{
-                    position: "absolute",
-                    animation: "spiralMove 1s infinite",
-                    fontSize: "24px",
-                  }}
-                >
-                  •
-                </span>
-                <span
-                  style={{
-                    position: "absolute",
-                    animation: "spiralMove 1s infinite 0.3s",
-                    fontSize: "24px",
-                  }}
-                >
-                  •
-                </span>
-                <span
-                  style={{
-                    position: "absolute",
-                    animation: "spiralMove 1s infinite 0.6s",
-                    fontSize: "24px",
-                  }}
-                >
-                  •
-                </span>
-                <style>
-                  {`
+            <div
+              style={{
+                gap: -24,
+                display: "flex",
+                alignItems: "flex-start",
+                justifyContent: "flex-start",
+              }}
+            >
+              <img src={image} style={{ width: 64, height: 64 }} alt="image" />
+
+              {/* Spiral Typing Effect */}
+              {isTyping ? (
+                <>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      position: "relative",
+                      width: "50px",
+                      height: "50px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        position: "absolute",
+                        animation: "spiralMove 1s infinite",
+                        fontSize: "24px",
+                      }}
+                    >
+                      •
+                    </span>
+                    <span
+                      style={{
+                        position: "absolute",
+                        animation: "spiralMove 1s infinite 0.3s",
+                        fontSize: "24px",
+                      }}
+                    >
+                      •
+                    </span>
+                    <span
+                      style={{
+                        position: "absolute",
+                        animation: "spiralMove 1s infinite 0.6s",
+                        fontSize: "24px",
+                      }}
+                    >
+                      •
+                    </span>
+                    <style>
+                      {`
                     @keyframes spiralMove {
                       0% { transform: translate(0, 0); }
                       25% { transform: translate(5px, -5px); }
@@ -157,23 +173,29 @@ const FloatingChat: React.FC = () => {
                       100% { transform: translate(0, 0); }
                     }
                   `}
-                </style>
-              </div>
-            ) : (
-              <p
-                style={{
-                  fontSize: 14,
-                  color: `var(--secondary-color)`,
-                  backgroundColor: "#ffffff12",
-                  padding: 16,
-                  borderRadius: 12,
-                }}
-              >
-                Our AI model is currently under development and will be finished
-                shortly to enable you to translate languages in your local
-                dialect.
-              </p>
-            )}
+                    </style>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <p
+                    style={{
+                      fontSize: 14,
+                      color: `var(--secondary-color)`,
+                      backgroundColor: "#ffffff12",
+                      padding: 16,
+                      borderRadius: 12,
+                      margin: 0,
+                      marginLeft: -12,
+                    }}
+                  >
+                    Our AI model is currently under development and will be
+                    finished shortly to enable you to translate languages in
+                    your local dialect.
+                  </p>
+                </>
+              )}
+            </div>
           </div>
         </div>
       )}
@@ -182,3 +204,22 @@ const FloatingChat: React.FC = () => {
 };
 
 export default FloatingChat;
+
+const styles = {
+  bounce: `
+      @keyframes bounce {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px); /* Bounce height */
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+    `,
+};
+
+const styleSheet = document.styleSheets[0] as CSSStyleSheet;
+styleSheet.insertRule(styles.bounce, styleSheet.cssRules.length);
