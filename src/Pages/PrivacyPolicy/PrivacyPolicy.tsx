@@ -14,13 +14,13 @@ const PrivacyPolicy: React.FC = () => {
       }}
     >
       <h1 style={{ color: "#05FA6F" }}>
-        Chat WaZoBia AI Mobile Privacy and Protection Policy
+        Chat WaZoBia AI Mobile Privacy and Data Protection Policy
       </h1>
       <p style={{ color: "#7D7A77" }}>
         At Chat WaZoBia AI, we are deeply committed to protecting your privacy
         and ensuring the security of your personal information. This Privacy and
-        Protection Policy ("Policy") provides a detailed explanation of how we
-        collect, use, store, and safeguard your data when you use the Chat
+        Data Protection Policy ("Policy") provides a detailed explanation of how
+        we collect, use, store, and safeguard your data when you use the Chat
         WaZoBia AI mobile application ("App"). By using the App, you agree to
         the practices described in this Policy.
       </p>
@@ -218,7 +218,7 @@ const PrivacyPolicy: React.FC = () => {
 
       <p style={{ color: "#7D7A77" }}>
         By using the Chat WaZoBia AI mobile App, you acknowledge and accept this
-        Privacy and Protection Policy.
+        Privacy and Data Protection Policy.
       </p>
       <p style={{ color: "#7D7A77" }}>
         Come, let’s build the future together! 🌍✨
