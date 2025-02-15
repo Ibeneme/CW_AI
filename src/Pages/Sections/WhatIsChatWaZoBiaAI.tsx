@@ -2,7 +2,14 @@ import React from "react";
 
 const WhatIsChatWaZoBiaAI: React.FC = () => {
   return (
-    <div style={{ padding: "20px", maxWidth: 900 }}>
+    <div
+      style={{
+        padding: "20px",
+        maxWidth: 900,
+        marginTop: -120,
+        marginBottom: -86,
+      }}
+    >
       <header
         style={{
           fontSize: "32px",
@@ -10,7 +17,7 @@ const WhatIsChatWaZoBiaAI: React.FC = () => {
           fontWeight: "bold",
         }}
       >
-        What is Chat Wazobia all about
+        What is Chat Wazobia AI all about
       </header>
 
       <h2
@@ -153,10 +160,7 @@ const WhatIsChatWaZoBiaAI: React.FC = () => {
           and preserve Africa’s linguistic and cultural heritage. Together, we
           can build a more inclusive and connected world.
         </p>
-        <p style={{ color: "var(--secondary-color)" }}>
-          For more information or to get started, visit [insert website] or
-          contact us at [insert email].
-        </p>
+
         <p style={{ color: "var(--secondary-color)", fontWeight: "bold" }}>
           Chat WaZoBia AI: Come, let’s build the future together! 🌍✨
         </p>

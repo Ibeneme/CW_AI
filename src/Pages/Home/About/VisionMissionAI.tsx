@@ -1,6 +1,76 @@
 import "./VisionMissionAI.css";
 
 const VisionMissionAI = () => {
+  const introText =
+    "At Chat WaZoBia AI, we are deeply committed to creating a platform that is inclusive, accessible, and respectful of Africa’s rich linguistic and cultural diversity. Our commitments guide everything we do, from the development of our technology to our interactions with users and communities. Here’s how we are dedicated to making a positive impact:";
+
+  const commitmentData = [
+    {
+      commitments: [
+        {
+          title: "Commitment to Linguistic Inclusion",
+          description:
+            "We are committed to supporting and integrating African languages into our platform, ensuring that users can communicate, learn, and access information in their native or preferred languages. We will continuously expand our language database to include more African languages and dialects, especially those that are underrepresented or at risk of being marginalized.",
+        },
+        {
+          title: "Commitment to Cultural Respect",
+          description:
+            "We are committed to respecting and reflecting the cultural nuances of African communities in our AI interactions. We will collaborate with linguists, cultural experts, and native speakers to ensure our platform is accurate, respectful, and culturally relevant.",
+        },
+        {
+          title: "Commitment to Accessibility",
+          description:
+            "We are committed to making technology accessible to all Africans, regardless of their location, socioeconomic status, or linguistic background. We will design user-friendly tools that cater to both urban and rural populations, ensuring that no one is left behind in the digital revolution.",
+        },
+        {
+          title: "Commitment to Education and Empowerment",
+          description:
+            "We are committed to providing educational resources and tools that help users learn new languages, acquire skills, and access knowledge. We will support students, professionals, and lifelong learners in achieving their goals by offering accurate and reliable information in their preferred language.",
+        },
+        {
+          title: "Commitment to Community Engagement",
+          description:
+            "We are committed to actively engaging with African communities to ensure our platform meets their needs. We will seek feedback and input from users to improve and refine our services, ensuring that Chat WaZoBia AI remains a platform that Africans can trust and rely on.",
+        },
+        {
+          title: "Commitment to Innovation",
+          description:
+            "We are committed to leading the way in developing AI solutions that address Africa’s unique challenges and opportunities. We will continuously innovate and improve our platform to meet the evolving needs of our users and contribute to the global advancement of artificial intelligence.",
+        },
+        {
+          title: "Commitment to Ethical AI",
+          description:
+            "We are committed to developing and deploying AI technology that is ethical, transparent, and accountable. We will prioritize user privacy and data security, ensuring that our platform is safe and trustworthy for all users.",
+        },
+        {
+          title: "Commitment to Preserving African Heritage",
+          description:
+            "We are committed to preserving and promoting African languages, traditions, and identities. We will work to ensure that these cultural treasures remain vibrant and relevant for future generations.",
+        },
+        {
+          title: "Commitment to Economic and Social Growth",
+          description:
+            "We are committed to empowering businesses and entrepreneurs by enabling them to reach diverse audiences in their preferred languages. We will contribute to the economic and social development of African communities through innovative AI solutions.",
+        },
+        {
+          title: "Commitment to Building a Connected Africa",
+          description:
+            "We are committed to creating a platform that fosters communication, collaboration, and understanding across linguistic and cultural divides. We will unite Africans through technology, enabling them to share ideas, solve problems, and celebrate their diversity.",
+        },
+      ],
+      promise: {
+        text: "Chat WaZoBia AI is more than just a technology platform—it’s a movement to empower Africa through language, culture, and innovation. We promise to:",
+        details: [
+          "Respect and celebrate the diversity of African cultures and languages.",
+          "Provide accurate, reliable, and culturally relevant information.",
+          "Continuously innovate and improve to meet the evolving needs of our users.",
+        ],
+      },
+      call_to_action: {
+        text: "Together, we can build a future where every African has the tools and opportunities to thrive. Chat WaZoBia AI is committed to being a platform that Africans can trust and rely on. Come, let’s build the future together! 🌍✨",
+      },
+    },
+  ];
   return (
     <section className="vision-mission-ai">
       {/* Vision Section */}
@@ -199,69 +269,23 @@ const VisionMissionAI = () => {
       <div className="section-wrapper">
         <div className="content-container">
           <h2 className="section-title">Our Commitment</h2>
-          <span className="section-about-span"> </span>
-          <p className="section-description">
-            At <strong>Chat WaZoBia AI</strong>, we are deeply committed to an
-            inclusive, accessible, and culturally respectful platform. Our
-            commitments guide everything we do.
-            <div className="commitment-list">
-              <div
-                className="commitment-item"
-                style={{ display: "flex", marginTop: 32 }}
-              >
-                <span className="commitment-number">1.</span>
-                <div className="commitment-text">
-                  <strong>Commitment to Linguistic Inclusion</strong>
-                  <p>
-                    Expanding our language database to include underrepresented
-                    African languages.
-                  </p>
-                </div>
-              </div>
 
+          <div className="section-description">
+            <br /> <p className="">{introText}</p>
+            {commitmentData[0]?.commitments?.map((commitment, index) => (
               <div
                 className="commitment-item"
-                style={{ display: "flex", marginTop: 32 }}
+                key={index}
+                style={{ display: "flex", marginTop: index === 0 ? 0 : 32 }}
               >
-                <span className="commitment-number">2.</span>
+                <span className="commitment-number">{index + 1}.</span>
                 <div className="commitment-text">
-                  <strong>Commitment to Cultural Respect</strong>
-                  <p>
-                    Collaborating with experts to ensure respectful and
-                    culturally relevant AI interactions.
-                  </p>
+                  <strong>{commitment.title}</strong>
+                  <p>{commitment.description}</p>
                 </div>
               </div>
-
-              <div
-                className="commitment-item"
-                style={{ display: "flex", marginTop: 32 }}
-              >
-                <span className="commitment-number">3.</span>
-                <div className="commitment-text">
-                  <strong>Commitment to Accessibility</strong>
-                  <p>
-                    Designing AI tools that cater to both urban and rural
-                    populations.
-                  </p>
-                </div>
-              </div>
-
-              <div
-                className="commitment-item"
-                style={{ display: "flex", marginTop: 32 }}
-              >
-                <span className="commitment-number">4.</span>
-                <div className="commitment-text">
-                  <strong>Commitment to Innovation</strong>
-                  <p>
-                    Developing AI solutions that address Africa’s unique
-                    challenges.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </p>
+            ))}
+          </div>
         </div>
       </div>
     </section>

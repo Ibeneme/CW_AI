@@ -21,8 +21,10 @@ const FourthSection = () => {
           {/* Left Side: Logo, Header, and Text */}
           <div className="fourth-section-text">
             <img src={logoImage} alt="Logo" className="logo-image" />
-            <h1>Puzzle Games and Eyo Game with our AI models</h1>
-            <p>
+            <h1 style={{ textAlign: "left" }}>
+              Puzzle Games and Eyo Game with our AI models
+            </h1>
+            <p style={{ textAlign: "left" }}>
               The app offers interactive Puzzle Games to challenge your mind and
               enhance language skills through engaging tasks. Additionally,
               explore the culturally inspired Eyo Game, where players can dive

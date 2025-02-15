@@ -34,7 +34,7 @@ const FifthSection: React.FC = () => {
           </p>
         </div>
       </div>
-      <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+      <br />
       <div
         style={{
           display: "flex",
@@ -45,7 +45,7 @@ const FifthSection: React.FC = () => {
       >
         <ChatWaZoBiaAI />
       </div>
-      <br /> <br /> <br />
+
       <div className="content-container">
         <AfricanCountriesTable />
         {/* <img src={image} alt="image" className="image-style" /> */}
