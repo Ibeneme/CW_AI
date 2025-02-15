@@ -13,7 +13,7 @@ const AfricanCountriesTable: React.FC = () => {
     <div className="table-container">
       <br />
       <br />
-      <h1>Our African Mother Tongue Enhancer</h1>
+      {/* <h1>Our African Mother Tongue Enhancer</h1> */}
       <div className="table-responsive">
         <table>
           <thead>
