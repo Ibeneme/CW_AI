@@ -2,7 +2,7 @@ import "./ContactUs.css";
 
 const ContactUs = () => {
   const handleContactClick = () => {
-    window.location.href = "mailto:chatwazobia@gmail.com";
+    window.location.href = "mailto:chatwazobiaai@gmail.com";
   };
 
   return (
