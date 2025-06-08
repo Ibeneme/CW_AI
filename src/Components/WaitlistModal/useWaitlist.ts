@@ -5,7 +5,8 @@ import axios from "axios";
 //https://cw-nodejs-server.onrender.com
 
 
-const BASE_URL = "https://cw-nodejs-server.onrender.com";
+const BASE_URL = `https://cw-nodejs-server-01.onrender.com`;
+
 export const useWaitlist = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);

@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { Route, Routes } from "react-router-dom";
 import Hero from "./Pages/Home/Index";
 import ScrollToTop from "./ScrollToTop";
@@ -10,27 +12,36 @@ import SixthSection from "./Pages/Home/Section/SixSection/SixthSection";
 import { AboutIndex } from "./Pages/Home/About/AboutIndex";
 import TermsAndConditions from "./Pages/TermsAndConditions/TermsAndConditions";
 import WaitlistModal from "./Components/WaitlistModal/WaitlistModal";
-import { useState } from "react";
 import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import AyoGameIndex from "./Pages/AyoGame/AyoGameIndex";
 import PuzzleGameIndex from "./Pages/PuzzleGameIndex/PuzzleGameIndex";
 import FloatingChat from "./Pages/Home/AfricanCountriesTable/FloatingChat";
 
+const BASE_URL = `https://cw-nodejs-server-01.onrender.com`;
+
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
+  useEffect(() => {
+    const pingServer = async () => {
+      try {
+        await axios.get(BASE_URL);
+        await axios.get(BASE_URL);
+        //console.log("✅ Successfully pinged server twice");
+      } catch (error) {
+        //console.error("❌ Error pinging server:", error);
+      }
+    };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+    pingServer();
+  }, []);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <>
       <WaitlistModal isOpen={isModalOpen} onClose={closeModal} />
-
       <ScrollToTop />
       <FloatingChat />
       <Routes>
@@ -38,8 +49,8 @@ function App() {
           path="/"
           element={
             <>
-              {" "}
-              <Navbar logoSrc={logoSrc} openModal={openModal} /> <Hero />
+              <Navbar logoSrc={logoSrc} openModal={openModal} />
+              <Hero />
               <Footer />
             </>
           }
@@ -48,8 +59,7 @@ function App() {
           path="/ayo"
           element={
             <>
-              {" "}
-              <Navbar logoSrc={logoSrc} openModal={openModal} />{" "}
+              <Navbar logoSrc={logoSrc} openModal={openModal} />
               <AyoGameIndex />
               <Footer hideContactUs />
             </>
@@ -59,8 +69,7 @@ function App() {
           path="/puzzle"
           element={
             <>
-              {" "}
-              <Navbar logoSrc={logoSrc} openModal={openModal} />{" "}
+              <Navbar logoSrc={logoSrc} openModal={openModal} />
               <PuzzleGameIndex />
               <Footer hideContactUs />
             </>
@@ -70,10 +79,8 @@ function App() {
           path="/faqs"
           element={
             <>
-              {" "}
-              <Navbar logoSrc={logoSrc} openModal={openModal} />{" "}
-              {/* Pass openModal function */}
-              <div style={{ marginTop: 130 }}></div>
+              <Navbar logoSrc={logoSrc} openModal={openModal} />
+              <div style={{ marginTop: 130 }} />
               <FAQPage />
               <SixthSection />
               <Footer />
@@ -84,19 +91,19 @@ function App() {
           path="/about"
           element={
             <>
-              <Navbar logoSrc={logoSrc} openModal={openModal} />{" "}
-              {/* Pass openModal function */}
-              <AboutIndex /> <Footer />
+              <Navbar logoSrc={logoSrc} openModal={openModal} />
+              <AboutIndex />
+              <Footer />
             </>
           }
-        />{" "}
+        />
         <Route
           path="/terms"
           element={
             <>
-              <Navbar logoSrc={logoSrc} openModal={openModal} />{" "}
-              {/* Pass openModal function */}
-              <TermsAndConditions /> <Footer />
+              <Navbar logoSrc={logoSrc} openModal={openModal} />
+              <TermsAndConditions />
+              <Footer />
             </>
           }
         />
@@ -104,9 +111,9 @@ function App() {
           path="/privacy-policy"
           element={
             <>
-              <Navbar logoSrc={logoSrc} openModal={openModal} />{" "}
-              {/* Pass openModal function */}
-              <PrivacyPolicy /> <Footer />
+              <Navbar logoSrc={logoSrc} openModal={openModal} />
+              <PrivacyPolicy />
+              <Footer />
             </>
           }
         />
