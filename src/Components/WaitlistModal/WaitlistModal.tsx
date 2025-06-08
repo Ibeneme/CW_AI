@@ -1,30 +1,25 @@
 import { useState } from "react";
 import "./WaitlistModal.css";
+import { useWaitlist } from "./useWaitlist";
 
 const WaitlistModal = ({ isOpen, onClose, demo }: any) => {
   const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
+  const {
+    isSubmitting,
+    showSuccess,
+    alreadySubscribed,
+    error,
+    handleSubmit,
+    setError,
+  } = useWaitlist();
 
-  const handleEmailChange = (e: any) => {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
+    setError(null);
   };
 
-  const handleSubmit = () => {
-    setIsSubmitting(true);
-
-    // Simulate a delay of 10 seconds for the loader
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setShowSuccess(true);
-
-      // Close the modal after 10.5 seconds
-      setTimeout(() => {
-        //onClose();
-        //setShowSuccess(false);
-        //setEmail("");
-      }, 500); // Close modal after success animation
-    }, 10000); // 10 seconds loader delay
+  const onSubmit = () => {
+    handleSubmit(email);
   };
 
   if (!isOpen) return null;
@@ -34,7 +29,12 @@ const WaitlistModal = ({ isOpen, onClose, demo }: any) => {
       <div className="modal-content">
         {!showSuccess ? (
           <div>
-       <h2>{demo ? 'This is a demo game. Our app is coming soon! Join our waitlist.' : 'Join our waitlist.'}</h2>   <p>Enter your email to join the waitlist for exclusive updates.</p>
+            <h2>
+              {demo
+                ? "This is a demo game. Our app is coming soon! Join our waitlist."
+                : "Join our waitlist."}
+            </h2>
+            <p>Enter your email to join the waitlist for exclusive updates.</p>
 
             <input
               type="email"
@@ -44,29 +44,57 @@ const WaitlistModal = ({ isOpen, onClose, demo }: any) => {
               disabled={isSubmitting}
               className="input-mod"
             />
+
+            {error && (
+              <p
+                style={{
+                  color: `var(--accent-color)`,
+                  backgroundColor: "#05FA6F21",
+                  padding: 12,
+                  borderRadius: 48,
+                  marginBottom: -12,
+                  marginTop: 12,
+                }}
+                className={`error-message ${
+                  alreadySubscribed ? "info-message" : ""
+                }`}
+              >
+                {error}
+              </p>
+            )}
+
             <>
               <button
-                onClick={handleSubmit}
+                onClick={onSubmit}
                 disabled={isSubmitting || !email}
                 className="submit-btn"
               >
                 {isSubmitting ? "Submitting..." : "Join Waitlist"}
               </button>
 
-              <button onClick={onClose} className="close-btn">
+              {/* Optional close button, uncomment if needed */}
+              {/* <button onClick={onClose} className="close-btn">
                 Close
-              </button>
+              </button> */}
             </>
           </div>
         ) : (
-          <div className="success-message">
-            <h3 style={{ color: `var(--primary-color)` }}>Success!</h3>
-            <p style={{ textAlign: "center" }}>
-              Your email has been added to the waitlist.
+          <div className="success-modal-content">
+            <h2 style={{ fontSize: 64 }}>🎉</h2>
+            <h2>Success!</h2>
+            <p>You've been added to the waitlist!</p>
+            <p>
+              Thank you for your interest. We're thrilled to have you on board
+              as we prepare to launch our cutting-edge AI-powered translation
+              and transcription platform.
             </p>
-            <div className="checkmark">✔️</div>
+            <p>
+              Stay tuned for updates — we’ll be reaching out with exclusive
+              early access, product news, and other exciting announcements.
+            </p>
+
             <button onClick={onClose} className="submit-btn">
-              Close{" "}
+              Close
             </button>
           </div>
         )}

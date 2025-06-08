@@ -1,4 +1,3 @@
-/* Modal overlay */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -11,19 +10,16 @@
     align-items: center;
     z-index: 1000;
     backdrop-filter: blur(5px);
-    /* This will apply the blur effect to the background */
 }
 
-/* Modal content */
 .modal-content {
     background-color: #000;
-    padding: 20px;
-    border-radius: 12px;
-    width: 400px;
+    padding: 12px;
+    border-radius: 20px;
+    width: 500px;
     text-align: center;
 }
 
-/* Success Message */
 .success-message {
     font-size: 1.2rem;
 }
@@ -34,7 +30,6 @@
     margin: 90px 12px;
 }
 
-/* Input Field */
 .input-mod {
     width: 94%;
     padding: 12px 0px;
@@ -48,9 +43,8 @@
 
 }
 
-/* Submit Button */
 .submit-btn {
-    padding: 10px 20px;
+    padding: 14px 20px;
     background-color: var(--accent-color);
     color: #222;
     border: none;
@@ -61,17 +55,12 @@
     margin-top: 28px
 }
 
-
-
-
-/* Loader */
 .loader {
     margin-top: 10px;
     font-size: 1.2rem;
     color: #4CAF50;
 }
 
-/* Close Button */
 .close-btn {
     background-color: #000;
     color: var(--secondary-color);
