@@ -16,6 +16,8 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import AyoGameIndex from "./Pages/AyoGame/AyoGameIndex";
 import PuzzleGameIndex from "./Pages/PuzzleGameIndex/PuzzleGameIndex";
 import FloatingChat from "./Pages/Home/AfricanCountriesTable/FloatingChat";
+import AdminLogin from "./Admin/AdminLogin/AdminLogin";
+import AdminDashboard from "./Admin/AdminDashboard/AdminDashboard";
 
 const BASE_URL = `https://cw-nodejs-server-01.onrender.com`;
 
@@ -27,10 +29,7 @@ function App() {
       try {
         await axios.get(BASE_URL);
         await axios.get(BASE_URL);
-        //console.log("✅ Successfully pinged server twice");
-      } catch (error) {
-        //console.error("❌ Error pinging server:", error);
-      }
+      } catch (error) {}
     };
 
     pingServer();
@@ -114,6 +113,25 @@ function App() {
               <Navbar logoSrc={logoSrc} openModal={openModal} />
               <PrivacyPolicy />
               <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="/admin-login"
+          element={
+            <>
+              <AdminLogin />
+              <Footer hideContactUs />
+            </>
+          }
+        />
+        <Route
+          path="/admin-dashboard"
+          element={
+            <>
+              <AdminDashboard />
+              <Footer hideContactUs />
             </>
           }
         />

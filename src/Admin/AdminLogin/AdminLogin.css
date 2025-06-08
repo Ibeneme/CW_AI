@@ -1,0 +1,116 @@
+.admin-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--background-color);
+    background-image: url("../src/assets/Hero/bgg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.admin-login-box {
+    background-color: #1e1e1ecc;
+    padding: 2.5rem 2rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.admin-login-title {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.admin-login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.admin-login-box input,
+.admin-login-box button {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.admin-login-box input {
+    background-color: transparent;
+    border: 0.7px solid var(--secondary-color);
+    color: var(--text-color);
+}
+
+.admin-login-box input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.admin-login-box button {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-login-box button:hover {
+    background-color: var(--primary-color);
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-wrapper input {
+    flex: 1;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: var(--font-family);
+  }]
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .admin-login-box {
+        padding: 2rem 1rem;
+    }
+
+    .admin-login-title {
+        font-size: 1.5rem;
+    }
+
+    .admin-login-box input,
+    .admin-login-box button {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+}

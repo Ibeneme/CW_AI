@@ -1,0 +1,240 @@
+.admin-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--background-color);
+    background-image: url("../src/assets/Hero/bgg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.admin-dashboard-box.no-shadow {
+    box-shadow: none;
+    background-color: rgba(30, 30, 30, 0.85);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.stat-card {
+    background-color: var(--fainted-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+    background-color: var(--secondary-color);
+}
+
+.stat-card h2 {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.admin-dashboard-box {
+    background-color: #1e1e1ecc;
+    padding: 3rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.admin-dashboard-title {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.admin-subtitle {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.chart-section {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.email-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--text-color);
+    background-color: var(--fainted-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.email-table th,
+.email-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.email-table th {
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.email-table tr:hover {
+    background-color: var(--primary-color);
+}
+
+.table-scroll-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* smooth scrolling on iOS */
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+/* Optional: ensure table width is not shrinking */
+.email-table {
+    min-width: 600px;
+    /* or adjust based on your minimum content width */
+}
+
+
+.search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #777;
+    /* lighter border for dark mode */
+    font-size: 1rem;
+    box-sizing: border-box;
+
+    background-color: #222;
+    /* dark background */
+    color: #eee;
+    /* light text */
+}
+
+/* Placeholder text color */
+.search-input::placeholder {
+    color: #bbb;
+}
+
+/* On focus, highlight border */
+.search-input:focus {
+    outline: none;
+    border-color: #ffdb1b;
+    /* your accent color */
+    box-shadow: 0 0 5px #ffdb1b88;
+}
+
+/* Pagination container */
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1rem;
+    user-select: none;
+}
+
+/* Scrollable pagination area for page buttons */
+.scrollable-pagination .page-buttons-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 4px;
+    max-width: 70vw;
+    padding: 4px 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) transparent;
+}
+
+/* For Webkit browsers */
+.scrollable-pagination .page-buttons-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.scrollable-pagination .page-buttons-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 3px;
+}
+
+.scrollable-pagination .page-buttons-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.pagination button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+    /* Prevent shrinking in flex container */
+    min-width: 40px;
+    text-align: center;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: var(--accent-color);
+}
+
+.pagination button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.pagination button.active {
+    background-color: var(--accent-color);
+    font-weight: 700;
+}
+
+
+@media (max-width: 600px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .stat-card p {
+        font-size: 2rem;
+    }
+
+}
